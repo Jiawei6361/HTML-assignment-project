@@ -1,0 +1,47 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+
+.slider-container {
+    width:600px;
+    height:400px;
+    overflow:hidden;
+    justify-content:center;
+    border-radius:30px;
+    margin:0 auto;
+    align-items:center;
+    margin-top: 50px;
+}
+.slider{
+    display:flex;
+    transition:transform 1s ease-in-out;
+    width:800px;
+    height:400px;
+
+}
+.img1{
+    margin-top:100px;
+    margin-left:200px;
+}
+.japan{
+    margin-top:40px;
+    margin-left:200px;
+    max-width:70%
+}
+.img2{
+    float:right;
+    margin-top:50px;
+    margin-right:200px;
+}
+.arg{
+    margin-top:30px;
+    float:right;
+    max-width:70%;
+    margin-right:250px
+}
+.lastimg{
+    margin-top:20px;
+    width:100%;
+    height:auto;
+}

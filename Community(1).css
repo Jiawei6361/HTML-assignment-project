@@ -1,0 +1,73 @@
+﻿/* 设置页面基础样式 */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* 背景图片的样式 */
+.background-section {
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/057/780/223/small/young-sapling-tree-growing-in-forest-sunlight-nature-scene-environmental-conservation-photo.jpeg'); /* 替换为你的图片路径 */
+    background-size: cover; /* 背景图片自适应 */
+    background-position: center center; /* 图片居中 */
+    color: white; /* 设置文字颜色为白色 */
+    padding: 50px 20px; /* 给背景区域添加内边距，确保文字不贴边 */
+	margin-bottom:100px;
+    text-align: left;
+	min-height: 800px; /* 确保背景区域有足够的高度 */
+    box-sizing: border-box; /* 包含 padding 在内的整体大小 */
+	border-radius: 0px 0px 30px 30px;
+}
+
+
+/* 其他部分样式 */
+.title{
+   color: #75f734;
+   font-size:26px;
+   margin-bottom:20px;
+
+}
+.text-box{
+	padding: 10px; /* 内边距，确保文字不贴边 */
+    margin-top: 10px; /* 顶部间距 */
+    font-size: 16px; /* 文字大小 */
+    color: white; /* 文字颜色 */
+    line-height: 1.6; /* 行高 */
+    border-radius: 10px; /* 圆角 */
+    max-width: 50%; /* 限制宽度为 60% */
+    margin: left; /* 使其居中 */
+}
+
+.earth {
+    color: #2c3e50;
+	margin-left: 50px;
+}
+
+.img1 {
+	max-width: 100%; /* 保证图片不会超过容器宽度 */
+    height: auto; /* 保证图片的高度自适应 */
+    max-width: 400px; /* 可以根据需要调整图片最大宽度 */
+	float: right;
+	margin-right: 50px;
+}
+.img23{
+	display: flex; 
+	align-items: center;
+	margin-top:100px;
+
+}
+
+.text2 {
+	display: flex;
+	align-items: center;
+	margin-top: 10px;
+	margin-left: 280px;
+	font-size:30px;
+
+}
+.text3{
+	display:flex;
+	align-items:center;
+	margin-top:-50px;
+	margin-left:330px;
+	font-size:50px;
+}

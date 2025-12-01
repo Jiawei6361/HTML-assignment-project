@@ -1,0 +1,45 @@
+﻿body{
+    background-image:url('https://img.freepik.com/free-photo/blurred-cafe-with-tables-wooden-chairs_1203-1270.jpg');
+    background-size:cover;
+    background-position:center;
+    overflow-x:hidden;
+    height:100vh;
+    width:100vw;
+}
+.container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100%;
+    width:100%;
+}
+.form-box{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 10px rgba(0,0,0,0.3);
+    width:300px;
+    height:300px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+	animation: slideInL 0.5s ease-out forwards;
+}
+
+@keyframes slideInL {
+            from {
+                transform: translateY(-100%); 
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0); 
+            }
+        }
+
+.photo{
+	animation: slideInL 1.5s ease-out forwards;
+}
+
+}

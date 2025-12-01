@@ -1,0 +1,2 @@
+M001,Maria,6361,Female,john.doe@apu.edu.my,0123456789,35
+M002,Jiawei,6361,Male,Jiawei@gmail.com,0162972891,20

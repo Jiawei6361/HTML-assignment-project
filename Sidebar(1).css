@@ -1,0 +1,36 @@
+﻿.sidebar {
+	position: sticky;
+    top: 80px; /* Start fixing from the top */
+    left:0;
+    height: calc(100vh - 80px); /* Fill the entire viewport */
+	width: 250px;
+    padding: 20px;
+    overflow-y: auto; /* Make sure the excess is scrollable */
+    flex-shrink: 0; /* Preventing the sidebar from being compressed */
+    background-color:WhiteSmoke;
+}
+
+.sidebar ul {
+    padding-top: 40px; /* Avoid content obstruction */
+}
+
+.sidebar-link {
+	padding: 10px 15px;
+    margin: 5px 0;
+    color: #888;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease, border-radius 0.3s ease;
+}
+
+.sidebar-link:hover {
+	background-color: #eee;
+	border-radius: 12px;
+}
+
+.sidebar-link.active {
+	font-weight: bold;
+    color: #FF9966;
+    background-color:#eee;
+    border-radius:12px;
+}

@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Travel</title>
+<link href="MenuStyle.css" rel="stylesheet" type="text/css">
+<script src="ButtonBackToTop.js" defer></script>
+<style>
+/*Introduction*/
+	.container-intro{
+	position:relative;
+	z-index:-1;
+	}
+	.intro-img{
+	position:relative;
+	height:450px;
+	overflow:hidden;
+	}
+	.intro-img img{
+	width:100%;
+	height:450px;
+	object-fit:cover;
+	display:block;
+	-webkit-mask-image:linear-gradient(to bottom,
+	rgba(0,0,0,1)70%,
+	rgba(0,0,0,0)100%);
+	mask-image:linear-gradient(to-bottom,
+	rgba(0,0,0,1)70%,
+	rgba(0,0,0,0)100%);
+	}
+	.intro-content{
+	position:absolute;
+	top:10%;
+	left:50%;
+	transform:translate(-50%,50%);
+	text-align:center;
+	width:80%;
+	color:white;
+	}
+	.intro-content h1 {
+	font-size: 5rem;
+	text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+	}
+
+	.intro-content p {
+	margin-top:-40px;
+	font-size: 1.0em;
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+	line-height: 1.3;
+	}
+	/*Travel Category*/
+	.travel-category{
+	margin:0;
+	padding:20px;
+}
+	.travel-category h2{
+	text-align:center;
+	font-size:2.5rem;
+	text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+	}
+	.container-category{
+	display:flex;
+	justify-content:center;
+	gap:40px;
+	flex-wrap:wrap;
+	margin-bottom:10px;
+	}
+	.category{
+	border-radius:20px;
+	transition:all 0.3 ease;
+	box-shadow:0 5px 15px rgba(0,0,0,0.1);
+	overflow:hidden;
+	}
+	.category img{
+	width:300px;
+	height:200px;
+	object-fit:cover;
+	border-radius:20px 20px 0 0;
+	}
+	.category-info{
+	text-align:center;
+	font-size:1.2rem;
+	color:black;
+	}
+	.category a{
+	text-decoration:none;
+	color:black;
+	}
+	.category:hover{
+	transform:scale(1.05);
+	box-shadow:0 5px 15px rgba(0,0,0,0.3);
+	}
+
+</style>
+</head>
+
+<body>
+<!-- Menu -->
+<div class="navbar">
+	<a href="MainPage.html" class="logo">
+        <img src="ISC LOGO.png" alt="ISC Logo">
+    </a>
+	<a href="MainPage.html">Main</a>
+	<a href="INTRO.html">About</a>
+	
+	<!-- 下拉menu的 -->
+	<div class="dropdown">
+        <a href="Events.html">Events</a>
+        <div class="dropdown-content">
+            <a href="EventsMT.html">Maldives Tour</a>
+            <a href="EventsCN.html">Cultural Night</a>
+            <a href="EventsCR.html">Colour Run</a>
+        </div>
+    </div>
+    
+	<a href="Community volunteer.html">Volunteering</a>
+	<a href="culture awareness.html">Cultural</a>
+	
+	<div class="dropdown">
+		<a href="Festival Celebration.html">Festival</a>
+		<div class="dropdown-content">
+			<a href="Malaysia.html">Domestic</a>
+			<a href="Foreign.html">Foreign</a>
+		</div>
+	</div>
+	
+	<div class="dropdown">
+		<a href="MainCuisine.html">Cuisine</a>
+		<div class="dropdown-content">
+			<a href="local food.html">Domestic</a>
+			<a href="in food.html">Foreign</a>
+		</div>
+	</div>
+	
+	<div class="dropdown">
+		<a href="Travel.html">Travel</a>
+		<div class="dropdown-content">
+			<a href="travel-domestic.html">Domestic</a>
+			<a href="travel-foreign.html">Foreign</a>
+		</div>
+	</div>
+	
+	<a href="FNQ.html">FAQ</a>
+	<a href="register.html" class="join-button">Join Us</a>
+
+</div>
+
+	<div class="container-intro">
+		<div class="intro-img">
+			<img alt="intro" src="assignment/picture/photo_2025-03-30_18-28-30.jpg">
+		</div>
+		<div class="intro-content">
+			<h1>
+				Travel & Exploration
+			</h1>
+			<p>
+			Discover the unique beauty of different countries through our collection of</br> verified 
+			student-recommended destinations. From majestic natural wonders to</br> rich cultural treasures, 
+			let these authentic experiences inspire your next adventure.
+			</p>
+		</div>
+	</div>
+	<div class="travel-category">
+		<h2>Travel Category</h2>
+		<div class="container-category">
+			<div class="category">
+				<a href="travel-domestic.html">
+					<div class="category-img">
+						<img alt="domestic" src="assignment/picture/photo_2025-03-28_00-00-25.jpg">
+						</div>
+					<div class="category-info">
+					<h3>Domestic</h3>
+					</div>
+				</a>
+			</div>
+			<div class="category">
+				<a href="travel-foreign.html">
+					<div class="category-img">
+						<img alt="foreign" src="assignment/picture/photo_2025-03-26_19-24-32.jpg">
+					</div>
+					<div class="category-info">
+					<h3>Foreign</h3>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Back To Top BUTTON -->
+<button id="backToTop" onclick="scrollToTop()">▲</button>
+
+	
+		<!-- Footer -->
+	<!-- 引入 Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<footer>
+	    <!-- Logo -->
+	    <div>
+	        <a href="MainPage.html"><img src="ISC LOGO.png" alt="ISC Logo" style="height: 180px;"></a>
+	    </div>
+	
+	    <!-- Support -->
+	    <div>
+	        <h3>Support</h3>
+	        <p><a href="INTRO.html#contact-us">Contact Us</a></p>
+	        <p>Terms & Conditions</p>
+	        <p>Privacy Policy</p>
+	    </div>
+	
+	    <!-- Follow Us -->
+	    <div>
+	        <h3>Follow Us</h3>
+	        <a href="https://www.instagram.com/apusrc/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+	    	<a href="https://www.facebook.com/APUStudentARC" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+	    </div>
+	
+	    <!-- Contact Details -->
+	    <div>
+	        <h3>Contact Details</h3>
+	        <p>Phone no: +60125201314</p>
+	        <p>Email: iscapu@gmail.com</p>
+	    </div>
+	</footer>
+
+</body>
+
+</html>

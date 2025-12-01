@@ -1,0 +1,488 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Events</title>
+<link href="MenuStyle.css" rel="stylesheet" type="text/css">
+<script src="ButtonBackToTop.js" defer></script>
+<link href="EventsSlideShow.css" rel="stylesheet" type="text/css">
+<script src="EventsImage.js" defer></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<style>
+h1 {
+    font-size: 36px; 
+    color: #6f5a54; 
+    text-align: center; 
+    margin-bottom: 20px;
+}
+
+#map {
+    height: 400px;
+    width: 90%;
+    border-radius: 10px;
+    margin: 0 auto;
+	display: block;  /* Make div a block-level element so that it can be centered with margin */
+	z-index: 500;
+}
+
+p{
+	font-size:18px;
+	line-height:1.5;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Menu -->
+<div class="navbar">
+	<a href="MainPage.html" class="logo">
+        <img src="ISC LOGO.png" alt="ISC Logo">
+    </a>
+	<a href="MainPage.html">Main</a>
+	<a href="INTRO.html">About</a>
+	
+	<!-- Drop-down menu -->
+	<div class="dropdown">
+        <a href="Events.html">Events</a>
+        <div class="dropdown-content">
+            <a href="EventsMT.html">Maldives Tour</a>
+            <a href="EventsCN.html">Cultural Night</a>
+            <a href="EventsCR.html">Colour Run</a>
+        </div>
+    </div>
+    
+	<a href="Community volunteer.html">Volunteering</a>
+	<a href="culture awareness.html">Cultural</a>
+	
+	<div class="dropdown">
+		<a href="Festival Celebration.html">Festival</a>
+		<div class="dropdown-content">
+			<a href="Malaysia.html">Domestic</a>
+			<a href="Foreign.html">Foreign</a>
+		</div>
+	</div>
+	
+	<div class="dropdown">
+		<a href="MainCuisine.html">Cuisine</a>
+		<div class="dropdown-content">
+			<a href="local food.html">Domestic</a>
+			<a href="in food.html">Foreign</a>
+		</div>
+	</div>
+	
+	<div class="dropdown">
+		<a href="Travel.html">Travel</a>
+		<div class="dropdown-content">
+			<a href="travel-domestic.html">Domestic</a>
+			<a href="travel-foreign.html">Foreign</a>
+		</div>
+	</div>
+	
+	<a href="FNQ.html">FAQ</a>
+	<a href="register.html" class="join-button">Join Us</a>
+
+</div>
+
+
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+	<div class="numbertext">1 / 3</div>
+	<img src="MainPageColourRun.jpg" style="width:100%">
+	<div class="text">Colour Run</div>
+</div>
+
+<div class="mySlides fade">
+	<div class="numbertext">2 / 3</div>
+	<img src="MainPageCulturalNight.jpg" style="width:100%">
+	<div class="text">Cultural Night</div>
+</div>
+
+<div class="mySlides fade">
+	<div class="numbertext">3 / 3</div>
+	<img src="MainPageMaldivesTour.jpg" style="width:100%">
+	<div class="text">Maldives Tour</div>
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+	<span class="dot"></span> 
+	<span class="dot"></span> 
+	<span class="dot"></span> 
+</div>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+	let i;
+	let slides = document.getElementsByClassName("mySlides");
+	let dots = document.getElementsByClassName("dot");
+	// Hide all slides first
+	for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";  
+	}
+	
+	// Move to the next slide
+	slideIndex++;
+	if (slideIndex > slides.length) {
+		slideIndex = 1; // Loop back to first slide
+	}
+	
+	// Remove 'active' class from all dots
+	for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" active", "");
+	}
+	
+	// Show current slide & highlight the corresponding dot
+	slides[slideIndex-1].style.display = "block";  
+	dots[slideIndex-1].className += " active";
+	
+	// Automatically move to the next slide after 3 seconds
+	setTimeout(showSlides, 3000);
+}
+</script>
+
+
+<div class="event-intro">
+    <div class="event-intro-text">
+        <h1>Join Our Exciting Events!</h1>
+        <p>
+            Looking for an unforgettable experience? 
+            Our <b>International Student Club</b> organizes diverse events throughout the year, including 
+            <b>cultural nights, outdoor adventures, and social campaigns</b>. 
+            These activities allow you to connect with students from different backgrounds, 
+            <b>explore new cultures</b>, and create lasting memories.
+        </p>
+        <p>
+            We host <b>talks, debates, performances, and interactive sessions</b> led by experts and passionate individuals. 
+            Whether you want to <b>learn, engage, or simply have fun</b>, there's something for everyone! 
+            Don't miss out—— <strong>join us today and be part of our vibrant community!</strong>
+        </p>
+    </div>
+    <div class="event-intro-image">
+        <img src="EventsJoin.jpg" alt="International Student Club Events">
+    </div>
+</div>
+<br><br>
+
+
+<h1>Benefits of Joining Our Club Events</h1>
+<div class="gallery-container">
+	<button class="scroll-btn left">&lt;</button> <!-- left button -->
+    <div class="gallery">
+        <div class="image-box">
+            <img src="EventsGallery01.jpg" alt="Cultural Enrichment">
+            <div class="overlay">Cultural Enrichment</div>
+        </div>
+        <div class="image-box">
+            <img src="EventsGallery02.jpg" alt="Friendship and Networking">
+            <div class="overlay">Friendship & Networking</div>
+        </div>
+        <div class="image-box">
+            <img src="EventsGallery03.jpg" alt="Personal Growth">
+            <div class="overlay">Personal Growth</div>
+        </div>
+        <div class="image-box">
+            <img src="EventsGallery04.jpg" alt="Leadership Opportunities">
+            <div class="overlay">Leadership Opportunities</div>
+        </div>
+        <div class="image-box">
+            <img src="EventsGallery05.jpg" alt="Memorable Experiences">
+            <div class="overlay">Memorable Experiences</div>
+        </div>
+        <div class="image-box">
+            <img src="EventsGallery06.jpg" alt="Career Advantages">
+            <div class="overlay">Career Advantages</div>
+        </div>
+    </div>
+    <button class="scroll-btn right">&gt;</button> <!-- right arrow -->
+</div>
+<br><br><br><br><br>
+
+
+<h1>Our Events Around the World</h1>
+    <div id="map"></div> <!-- Map Container -->
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map (set center point and zoom level)
+		var map = L.map('map', {
+    		scrollWheelZoom: false,  // Disable scroll wheel zoom
+    		doubleClickZoom: false,  // Disable double click zoom
+    		dragging: true,          // Allow map dragging
+    		zoomControl: true        // Allow zooming using the `+/-` control buttons
+		}).setView([3.1390, 101.6869], 2); // Set initial center & zoom
+
+        // Add a map layer (using OpenStreetMap)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Add punctuation (Marker) and set click pop-up information
+        var events = [
+            { name: "Cultural Night", lat: 3.0555, lon: 101.7005, desc: "A night of diverse culture in APU!" },
+            { name: "Colour Run", lat: 3.055, lon: 101.7005, desc: "Fun and colorful run in APU!" },
+            { name: "Beijing Global Student Meetup", lat: 39.9042, lon: 116.4074, desc: "" },
+			{ name: "Yunnan Heritage & Culinary Experience", lat: 25.0450, lon: 102.7098, desc: "" },
+			{ name: "Bangkok Cultural Exchange Program", lat: 13.7563, lon: 100.5018, desc: "" },
+			{ name: "DMU-APU Innovation & Future Forum", lat: 52.6291, lon: -1.1331, desc: "" },
+			{ name: "Sydney International Student Connect", lat: -33.8688, lon: 151.2093, desc: "" },
+			{ name: "Australian Cultural Discovery Tour", lat: -37.8136, lon: 144.9631, desc: "" },
+			{ name: "Tokyo Japanese Culture Exchange", lat: 35.6895, lon: 139.6917, desc: "" },
+			{ name: "Semporna Island Exploration", lat: 4.4818, lon: 118.6112, desc: "" },
+			{ name: "Singapore Tech & Innovation Summit", lat: 1.3521, lon: 103.8198, desc: "" },
+			{ name: "Swiss Alpine Adventure Retreat", lat: 46.8182, lon: 8.2275, desc: "" },
+            { name: "Maldives Tour", lat: 3.2028, lon: 73.2207, desc: "" }
+        ];
+
+        events.forEach(event => {
+            L.marker([event.lat, event.lon]).addTo(map)
+        		.bindPopup(`<b>${event.name}</b><br>${event.desc}`); // Without openPopup()
+        });
+    </script>
+<br><br><br><br>
+
+
+<h1>Discover Our Signature Events</h1>
+<div class="events-container">
+    <!-- Maldives Tour -->
+    <div class="event-card">
+        <a href="EventsMT.html">
+            <div class="image-container">
+                <img src="MainPageMaldivesTour.jpg" alt="Maldives Tour">
+            </div>
+        </a>
+        <div class="event-info">
+            <span class="event-date"><i class="fa fa-calendar" style="font-size:16px;color:#FF9966"></i> 21 Jun 2025</span>
+            &nbsp;
+            <span class="event-time"><i class="fa fa-clock-o" style="font-size:16px;color:#FF9966"></i> 7 Days Trip</span>
+            <a href="EventsMT.html" class="event-title">Maldives Tour</a>
+            <p class="event-desc">Explore the breathtaking Maldives with friends in this unforgettable trip!</p>
+        </div>
+    </div>
+
+	<!-- Cultural Night -->
+    <div class="event-card">
+        <a href="EventsCN.html">
+        	<div class="image-container">
+                <img src="MainPageCulturalNight.jpg" alt="Cultural Night">
+            </div>
+        </a>
+        <div class="event-info">
+            <span class="event-date"><i class="fa fa-calendar" style="font-size:16px;color:#FF9966"></i> 14 Dec 2024</span>
+            &nbsp;
+            <span class="event-time"><i class="fa fa-clock-o" style="font-size:16px;color:#FF9966"></i> 3:00 PM - 10:00 PM</span>
+            <a href="EventsCN.html" class="event-title">Cultural Night</a>
+            <p class="event-desc">Experience diverse cultures through performances, food, and activities!</p>
+        </div>
+    </div>
+
+    <!-- Colour Run -->
+    <div class="event-card">
+        <a href="EventsCR.html">
+            <div class="image-container">
+                <img src="MainPageColourRun.jpg" alt="Colour Run">
+            </div>
+        </a>
+        <div class="event-info">
+            <span class="event-date"><i class="fa fa-calendar" style="font-size:16px;color:#FF9966"></i> 23 Nov 2024</span>
+            &nbsp;
+            <span class="event-time"><i class="fa fa-clock-o" style="font-size:16px;color:#FF9966"></i> 12:30 PM - 7:00 PM</span>
+            <a href="EventsCR.html" class="event-title">Colour Run</a>
+            <p class="event-desc">Join the most colorful run and have fun while supporting a great cause!</p>
+        </div>
+    </div>
+</div>
+<br><br><br><br>
+
+
+
+
+
+<div class="other-events-container">
+	
+    <div class="other-event-card">
+        <div class="other-image-container">
+            <img src="EventsOther-Singapore.jpg" alt="Singapore Tech & Innovation Summit">
+        </div>
+        <div class="other-event-info">
+            <span class="other-event-date">October 2024</span>
+            <div class="other-event-title">Singapore Tech & Innovation Summit</div>
+            <p class="other-event-desc">
+            	A forward-thinking discussion in Singapore on emerging technology trends, featuring industry leaders and tech enthusiasts.
+            </p>
+        </div>
+    </div>
+
+    <div class="other-event-card">
+        <div class="other-image-container">
+            <img src="EventsOther-Beijing.jpg" alt="Beijing Global Student Meetup">
+        </div>
+        <div class="other-event-info">
+            <span class="other-event-date">September 2024</span>
+            <div class="other-event-title">Beijing Global Student Meetup</div>
+            <p class="other-event-desc">
+            	A global gathering where students engaged in cultural exchange and networking in the heart of Beijing.
+            </p>
+        </div>
+    </div>
+    
+    <div class="other-event-card">
+        <div class="other-image-container">
+            <img src="EventsOther-Bangkok.jpg" alt="Bangkok Cultural Exchange Program">
+        </div>
+        <div class="other-event-info">
+            <span class="other-event-date">August 2024</span>
+            <div class="other-event-title">Bangkok Cultural Exchange Program</div>
+            <p class="other-event-desc">
+            	A dynamic program in Bangkok showcasing Thai traditions, arts, and customs through interactive sessions.
+            </p>
+        </div>
+    </div>
+        
+    <div class="other-event-card">
+        <div class="other-image-container">
+            <img src="EventsOther-Yunan.jpg" alt="Yunnan Heritage & Culinary Experience">
+        </div>
+        <div class="other-event-info">
+            <span class="other-event-date">July 2024</span>
+            <div class="other-event-title">Yunnan Heritage & Culinary Experience</div>
+            <p class="other-event-desc">
+            	An immersive journey into Yunnan’s ethnic traditions, featuring vibrant performances and authentic local cuisine.
+            </p>
+        </div>
+    </div>
+    
+    <div class="other-event-card">
+        <div class="other-image-container">
+            <img src="EventsOther-Semporna.jpg" alt="Semporna Island Exploration">
+        </div>
+        <div class="other-event-info">
+            <span class="other-event-date">June 2024</span>
+            <div class="other-event-title">Semporna Island Exploration</div>
+            <p class="other-event-desc">
+            	A thrilling exploration of Semporna’s stunning islands, crystal-clear waters, and diverse marine life.
+            </p>
+        </div>
+    </div>
+        
+    <div class="other-event-card">
+        <div class="other-image-container">
+            <img src="EventsOther-Tokyo	.jpg" alt="Tokyo Japanese Culture Exchange">
+        </div>
+        <div class="other-event-info">
+            <span class="other-event-date">May 2024</span>
+            <div class="other-event-title">Tokyo Japanese Culture Exchange</div>
+            <p class="other-event-desc">
+            	A cultural immersion event in Tokyo featuring traditional arts, language workshops, and culinary experiences.
+            </p>
+        </div>
+    </div>
+
+    <div class="other-event-card">
+        <div class="other-image-container">
+            <img src="EventsOther-Sidney.jpg" alt="Sydney International Student Connect">
+        </div>
+        <div class="other-event-info">
+            <span class="other-event-date">April 2024</span>
+            <div class="other-event-title">Sydney International Student Connect</div>
+            <p class="other-event-desc">
+            	A social platform in Sydney where international students connected, shared experiences, and built lasting friendships.
+            </p>
+        </div>
+    </div>
+    	
+    <div class="other-event-card">
+        <div class="other-image-container">
+            <img src="EventsOther-DMU.jpg" alt="DMU-APU Innovation & Future Forum">
+        </div>
+        <div class="other-event-info">
+            <span class="other-event-date">March 2024</span>
+            <div class="other-event-title">DMU-APU Innovation & Future Forum</div>
+            <p class="other-event-desc">
+            	A collaborative forum where students and experts from DMU and APU explored groundbreaking innovations and future trends.
+            </p>
+        </div>
+    </div>
+
+    <div class="other-event-card">
+        <div class="other-image-container">
+            <img src="EventsOther-Australian.jpg" alt="Australian Cultural Discovery Tour">
+        </div>
+        <div class="other-event-info">
+            <span class="other-event-date">February 2024</span>
+            <div class="other-event-title">Australian Cultural Discovery Tour</div>
+            <p class="other-event-desc">
+            	A deep dive into Australia’s diverse heritage, covering indigenous culture, urban landscapes, and natural wonders.
+            </p>
+        </div>
+    </div>
+
+    <div class="other-event-card">
+        <div class="other-image-container">
+            <img src="EventsOther-Swiss.jpg" alt="Swiss Alpine Adventure Retreat">
+        </div>
+        <div class="other-event-info">
+            <span class="other-event-date">January 2024</span>
+            <div class="other-event-title">Swiss Alpine Adventure Retreat</div>
+            <p class="other-event-desc">
+            	A Swiss getaway combining breathtaking alpine scenery, winter sports, and a taste of local mountain culture.
+            </p>
+        </div>
+    </div>
+    
+</div>
+<br><br>
+
+
+
+
+<!-- Back To Top BUTTON -->
+<button id="backToTop" onclick="scrollToTop()">▲</button>
+
+
+
+<!-- Footer -->
+<!-- 引入 Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<footer>
+    <!-- Logo -->
+    <div>
+        <a href="MainPage.html"><img src="ISC LOGO.png" alt="ISC Logo" style="height: 180px;"></a>
+    </div>
+
+    <!-- Support -->
+    <div>
+        <h3>Support</h3>
+        <p><a href="INTRO.html#contact-us">Contact Us</a></p>
+        <p>Terms & Conditions</p>
+        <p>Privacy Policy</p>
+    </div>
+
+    <!-- Follow Us -->
+    <div>
+        <h3>Follow Us</h3>
+        <a href="https://www.instagram.com/apusrc/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+    	<a href="https://www.facebook.com/APUStudentARC" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+    </div>
+
+    <!-- Contact Details -->
+    <div>
+        <h3>Contact Details</h3>
+        <p>Phone no: +60125201314</p>
+        <p>Email: iscapu@gmail.com</p>
+    </div>
+</footer>
+
+
+</body>
+
+</html>

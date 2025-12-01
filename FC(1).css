@@ -1,0 +1,46 @@
+﻿body {
+	overflow-x:hidden;
+}
+
+.imgt{
+    display:flex;
+    align-items:center;
+}
+.imgl{
+    display:flex;   
+    justify-content:center;
+
+}
+.background-img{
+
+    background-size:cover;
+    width:100%;
+    height:auto;
+}
+.timg{
+    display:block;
+    font-size: 150px; /* æ–‡å­—çš„å¤§å° */
+    font-weight: bold; /* è®¾ç½®æ–‡å­—åŠ ç²— */
+    background-image: url('https://media.istockphoto.com/id/1258709699/vector/national-flag-background.jpg?s=612x612&w=0&k=20&c=8l3RE0f94V113E0WiEgISyBzI7U1XtNP5_9xd4zDTCU='); /* èƒŒæ™¯å›¾ç‰‡ */
+    background-size: 700px 780px; /* èƒŒæ™¯å›¾ç‰‡å¤§å°è®¾ç½®ä¸ºè¦†ç›–æ•´ä¸ªæ–‡å­—åŒºåŸŸ */
+    -webkit-background-clip: text; /* ä½¿èƒŒæ™¯å›¾ç‰‡ä»…æ˜¾ç¤ºåœ¨æ–‡å­—åŒºåŸŸ */
+    background-clip: cover; /* ä½¿èƒŒæ™¯å›¾ç‰‡ä»…æ˜¾ç¤ºåœ¨æ–‡å­—åŒºåŸŸ */
+    color: transparent; /* æ–‡å­—æœ¬èº«çš„é¢œè‰²é€æ˜ */
+    margin-left:100px;
+}
+.text{
+    margin-left:100px;
+    margin-top:40px;
+    width:100%
+}
+.img-t{
+    display:flex;
+    align-items:center;
+    width:100%
+}
+.texti{
+    margin-left:100px;
+    margin-top:40px;
+    width:50%;
+    
+}
