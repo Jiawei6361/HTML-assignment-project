@@ -1,0 +1,305 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Cultural Night</title>
+<link href="MenuStyle.css" rel="stylesheet" type="text/css">
+<script src="ButtonBackToTop.js" defer></script>
+<link href="EventsCNight.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+h1 {
+    font-size: 36px; 
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+	margin: 30px; 
+  	text-align: justify;
+}
+
+p{
+	font-size:18px;
+	line-height:1.5;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Menu -->
+<div class="navbar">
+	<a href="MainPage.html" class="logo">
+        <img src="ISC LOGO.png" alt="ISC Logo">
+    </a>
+	<a href="MainPage.html">Main</a>
+	<a href="INTRO.html">About</a>
+	
+	<!-- Drop-down menu -->
+	<div class="dropdown">
+        <a href="Events.html">Events</a>
+        <div class="dropdown-content">
+            <a href="EventsMT.html">Maldives Tour</a>
+            <a href="EventsCN.html">Cultural Night</a>
+            <a href="EventsCR.html">Colour Run</a>
+        </div>
+    </div>
+    
+	<a href="Community volunteer.html">Volunteering</a>
+	<a href="culture awareness.html">Cultural</a>
+	
+	<div class="dropdown">
+		<a href="Festival Celebration.html">Festival</a>
+		<div class="dropdown-content">
+			<a href="Malaysia.html">Domestic</a>
+			<a href="Foreign.html">Foreign</a>
+		</div>
+	</div>
+	
+	<div class="dropdown">
+		<a href="MainCuisine.html">Cuisine</a>
+		<div class="dropdown-content">
+			<a href="local food.html">Domestic</a>
+			<a href="in food.html">Foreign</a>
+		</div>
+	</div>
+	
+	<div class="dropdown">
+		<a href="Travel.html">Travel</a>
+		<div class="dropdown-content">
+			<a href="travel-domestic.html">Domestic</a>
+			<a href="travel-foreign.html">Foreign</a>
+		</div>
+	</div>
+	
+	<a href="FNQ.html">FAQ</a>
+	<a href="register.html" class="join-button">Join Us</a>
+
+</div>
+
+
+
+<h1>Cultural Night</h1>
+
+
+<!-- This event has passed - BOX -->
+<div class="event-passed">
+	<i class='fas fa-info-circle' style='font-size:16px'></i>This event has passed.
+</div>
+
+
+<!-- CN Date, Time, and Venue -->
+<div class="date-time-venue">
+<p>
+<i class="fa fa-calendar" style="font-size:16px;color:#FF9966"></i> 14 Dec 2024
+&nbsp;&nbsp;&nbsp;&nbsp;
+<i class="fa fa-clock-o" style="font-size:16px;color:#FF9966"></i> 3:00 PM - 10:00 PM
+&nbsp;&nbsp;&nbsp;&nbsp;
+<i class='fas fa-map-marker-alt' style='font-size:16px;color:#FF9966'></i> Asia Pacific University
+</p>
+</div>
+
+
+
+<div class="CNslideshow-container">
+    <div class="CNmySlides CNfade">
+        <img src="EventsCN01.jpg" style="width:100%">
+    </div>
+    <div class="CNmySlides CNfade">
+        <img src="EventsCN02.jpg" style="width:100%">
+    </div>
+    <div class="CNmySlides CNfade">
+        <img src="EventsCN03.jpg" style="width:100%">
+    </div>
+    <div class="CNmySlides CNfade">
+        <img src="EventsCN04.jpg" style="width:100%">
+    </div>
+    <div class="CNmySlides CNfade">
+        <img src="EventsCN05.jpg" style="width:100%">
+    </div>
+    <div class="CNmySlides CNfade">
+        <img src="EventsCN06.jpg" style="width:100%">
+    </div>
+    <div class="CNmySlides CNfade">
+        <img src="EventsCN07.jpg" style="width:100%">
+    </div>
+    <div class="CNmySlides CNfade">
+        <img src="EventsCN08.jpg" style="width:100%">
+    </div>
+    <div class="CNmySlides CNfade">
+        <img src="EventsCN09.jpg" style="width:100%">
+    </div>
+    <div class="CNmySlides CNfade">
+        <img src="MainPageCulturalNight.jpg" style="width:100%">
+    </div>
+</div>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.getElementsByClassName("CNmySlides");
+
+    // Hide all images first
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}  // 重新循环
+
+    // Show current picture
+    slides[slideIndex - 1].style.display = "block";
+
+    // Switch every 3 seconds
+    setTimeout(showSlides, 3000);
+}
+</script>
+<br><br>
+
+
+
+<div class="CN-overview">
+    <div class="CN-overview-text">
+        <h3>A Celebration of Diversity!</h3>
+        <p>
+        	On December 14, 2024, Asia Pacific University came alive with a vibrant display of cultural heritage during the annual 
+        		<b>Cultural Night</b>. 
+			The event brought together students from diverse backgrounds to celebrate traditions through mesmerizing performances, 
+				authentic global cuisine, and interactive cultural showcases. 
+			From traditional dances to music that resonated across continents, the night was a true testament to unity in diversity. 
+			The atmosphere was electric, filled with excitement and appreciation for the richness of different cultures. 
+        </p>
+    </div>
+    <div class="CN-overview-image">
+        <img src="EventsCN04.jpg" alt="Cultural Night Overview">
+    </div>
+</div>
+
+
+
+<br>
+
+<div class="cn-details">
+    <div class="cn-details-image">
+        <img src="EventsCN09.jpg" alt="Cultural Night Poster">
+    </div>
+
+    <div class="cn-details-text">
+        <h3>Event Details</h3>
+        <div class="cn-details-date-time-venue">
+            <p>
+                <i class="fa fa-calendar" style="font-size:16px;color:#FF9966"></i>&nbsp;&nbsp;
+                	<b>Date: </b>14 December 2024 (Saturday)<br>
+                <i class="fa fa-clock-o" style="font-size:16px;color:#FF9966"></i>&nbsp;&nbsp;
+                	<b>Time: </b>3:00 PM - 10:00 PM<br>
+                <i class='fas fa-map-marker-alt' style='font-size:16px;color:#FF9966'></i>&nbsp;&nbsp;&nbsp;
+                	<b>Venue: </b>Asia Pacific University<br>
+                <br>
+                <b>Highlights: </b>
+            </p>
+        </div>
+
+        <ul class="highlights-list">
+            <li><b>Traditional Performances:</b> Enthralling dances, music, and theatrical acts from various cultures.</li>
+            <li><b>Global Cuisine:</b> A feast of international flavors, offering authentic dishes from around the world.</li>
+            <li><b>Cultural Booths:</b> Interactive displays featuring traditional attire, crafts, and activities.</li>
+            <li><b>Live Instrumental Showcase:</b> A fusion of classical and modern melodies performed live.</li>
+        </ul>
+    </div>
+</div>
+<br>
+
+<h2>What Participants Said</h2>
+<div class="testimonials">
+    <div class="testimonial">
+        <img src="EventsCNtestimonial01.jpg" alt="Sophia L." class="testimonial-img">
+        <div class="testimonial-content">
+            <p class="testimonial-text">"It was an unforgettable night! I loved experiencing different traditions and meeting new people who shared their cultures with such passion."</p>
+            <p class="testimonial-name">Sarah L.</p>
+        </div>
+    </div>
+    <div class="testimonial">
+        <img src="EventsCNtestimonial02.jpg" alt="Daniel T." class="testimonial-img">
+        <div class="testimonial-content">
+            <p class="testimonial-text">"The performances were breathtaking! Every act was unique, and I could feel the pride behind each culture’s representation."</p>
+            <p class="testimonial-name">Ahmed R.</p>
+        </div>
+    </div>
+    <div class="testimonial">
+        <img src="EventsCNtestimonial03.jpg" alt="Mei Ling" class="testimonial-img">
+        <div class="testimonial-content">
+            <p class="testimonial-text">"I enjoyed the food the most! It felt like traveling the world through flavors. APU truly brought cultures together in the best way."</p>
+            <p class="testimonial-name">Mei Xuan</p>
+        </div>
+    </div>
+</div>
+<br><br><br>
+
+
+
+<div class="dont-missed-out">
+    <div class="dont-missed-out-text">
+        <h2>Missed out on last year’s Cultural Night?</h2>
+        <p>
+        	<b>No worries! Stay tuned for Cultural Night 2025</b>, 
+        	where we promise even more spectacular performances, exciting activities, and unforgettable experiences. 
+        	<b>See you at the 2025 Cultural Night!</b>
+        </p>
+    </div>
+
+    <div class="dont-missed-out-video">
+        <iframe width="660" height="370" 
+            src="https://www.youtube.com/embed/sUVEo69ClBQ" title="APU International Cultural Night 2023" 
+            frameborder="0" allowfullscreen>
+        </iframe>
+    </div>
+</div>
+<br><br>
+
+
+<!-- Back To Top BUTTON -->
+<button id="backToTop" onclick="scrollToTop()">▲</button>
+
+
+
+<!-- Footer -->
+<!-- Importing Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<footer>
+    <!-- Logo -->
+    <div>
+        <a href="MainPage.html"><img src="ISC LOGO.png" alt="ISC Logo" style="height: 180px;"></a>
+    </div>
+
+    <!-- Support -->
+    <div>
+        <h3>Support</h3>
+        <p><a href="INTRO.html#contact-us">Contact Us</a></p>
+        <p>Terms & Conditions</p>
+        <p>Privacy Policy</p>
+    </div>
+
+    <!-- Follow Us -->
+    <div>
+        <h3>Follow Us</h3>
+        <a href="https://www.instagram.com/apusrc/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+    	<a href="https://www.facebook.com/APUStudentARC" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+    </div>
+
+    <!-- Contact Details -->
+    <div>
+        <h3>Contact Details</h3>
+        <p>Phone no: +60125201314</p>
+        <p>Email: iscapu@gmail.com</p>
+    </div>
+</footer>
+
+
+</body>
+
+</html>

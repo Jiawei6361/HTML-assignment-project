@@ -1,0 +1,307 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>FNQ Page</title>
+<link href="MenuStyle.css" rel="stylesheet" type="text/css">
+<script src="ButtonBackToTop.js" defer></script>
+<style>
+	body{
+	font-family: Georgia, "Times New Roman", Times, serif;
+	background-color:whitesmoke;
+	}
+	.FAQ-Section{
+	margin:80px auto;
+	padding:0 20px;
+	}
+	.image{
+	text-align:center;
+	margin-bottom:-40px;
+	margin-top:-30px;
+	}
+	.FAQ-Section img{
+	width:200px;
+	height:200px;
+	}
+	.FAQ-Section h2{
+	font-size:2.5rem;
+	text-align:center;
+	margin-bottom:-10px;
+	text-shadow:2px 2px 10px rgba(0,0,0,0.2);
+	}
+	.FAQ-Section p{
+	font-size:1.1rem;
+	text-align:center;
+	line-height:1.3;
+	}
+	.FAQ-Buttons{
+	display:flex;
+	justify-content:center;
+	gap:15px;
+	flex-wrap:wrap;
+	margin-bottom:20px;
+	}
+	 .Btn{
+	font-size:1.0rem;
+	font-family:"Times New Roman", Times, serif;
+	color:white;
+	padding:10px;
+	background:#6f5a54;
+	border-radius:20px;
+	border:none;
+	cursor:pointer;
+	font-weight:bold;
+	transition:all 0.3s;
+	}
+	.Btn:hover,.Btn.active{
+	background:#bea6a0;
+	color:black;
+	}
+	.FAQ{
+	max-width:800px;
+	margin:0 auto;
+	margin-bottom:15px;
+	border:1px solid #ddd;
+	border-radius:10px;
+	overflow:hidden;
+	}
+	.Question{
+	padding:15px 20px;
+	background:#f8f9fa;
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	cursor:pointer;
+	font-weight:bold;
+	}
+	.Question:hover{
+	background:#e9ecef;
+	}
+	.Answer{
+	padding:0 20px;
+	max-height:0;
+	overflow:hidden;
+	transition:max-height 0.3s ease, padding 0.3s ease;
+	}
+	.FAQ.active .Answer{
+	padding:20px;
+	max-height:300px;
+	}
+	.arrow-icon{
+	transition:transform 0.3s;
+	}
+	.FAQ.active .arrow-icon{
+	transform:rotate(180deg);
+	}
+</style>
+</head>
+
+<body>
+<!-- Menu -->
+<div class="navbar">
+	<a href="MainPage.html" class="logo">
+        <img src="ISC LOGO.png" alt="ISC Logo">
+    </a>
+	<a href="MainPage.html">Main</a>
+	<a href="INTRO.html">About</a>
+	
+	<!-- 下拉menu的 -->
+	<div class="dropdown">
+        <a href="Events.html">Events</a>
+        <div class="dropdown-content">
+            <a href="EventsMT.html">Maldives Tour</a>
+            <a href="EventsCN.html">Cultural Night</a>
+            <a href="EventsCR.html">Colour Run</a>
+        </div>
+    </div>
+    
+	<a href="Community volunteer.html">Volunteering</a>
+	<a href="culture awareness.html">Cultural</a>
+	
+	<div class="dropdown">
+		<a href="Festival Celebration.html">Festival</a>
+		<div class="dropdown-content">
+			<a href="Malaysia.html">Domestic</a>
+			<a href="Foreign.html">Foreign</a>
+		</div>
+	</div>
+	
+	<div class="dropdown">
+		<a href="MainCuisine.html">Cuisine</a>
+		<div class="dropdown-content">
+			<a href="local food.html">Domestic</a>
+			<a href="in food.html">Foreign</a>
+		</div>
+	</div>
+	
+	<div class="dropdown">
+		<a href="Travel.html">Travel</a>
+		<div class="dropdown-content">
+			<a href="travel-domestic.html">Domestic</a>
+			<a href="travel-foreign.html">Foreign</a>
+		</div>
+	</div>
+	
+	<a href="FNQ.html">FAQ</a>
+	<a href="register.html" class="join-button">Join Us</a>
+
+</div>
+
+	<div class="FAQ-Section">
+		<div class="image">
+			<img alt="question" src="assignment/picture/photo_2025-03-29_20-19-00-removebg-preview.png">
+		</div>
+		<h2>Frequently Asked Question (FNQ)</h2>
+		<p>Find answers to common questions about our club.</br>If you still can't answer you're looking for, just Contact Us!</p>
+		<div class="FAQ-Buttons">
+			<button class="Btn active" data-category="all">All Questions</button>
+			<button class="Btn" data-category="membership">Membership & Benefits</button>
+			<button class="Btn" data-category="events">Events & Activities</button>
+		</div>
+		<div class="FAQ-Container">
+			<div class="FAQ" data-category="membership">
+				<div class="Question">
+					<span>Who can join the club?</span>
+					<span class="arrow-icon">▼</span>
+				</div>
+				<div class="Answer">
+					<p>
+					Any student, whether local or international, is welcome to join our club and participate in events!
+					</p>
+				</div>
+			</div>
+			<div class="FAQ" data-category="membership">
+				<div class="Question">
+					<span>How do I become a member?</span>
+					<span class="arrow-icon">▼</span>
+				</div>
+				<div class="Answer">
+					<p>
+					You can sign up through our online registration form.
+					<a href="register.html">Click Here</a>					
+					</p>
+				</div>
+			</div>
+			<div class="FAQ" data-category="membership">
+				<div class="Question">
+					<span>Are there any membership fees?</span>
+					<span class="arrow-icon">▼</span>
+				</div>
+				<div class="Answer">
+					<p>
+					 No, membership is free! However, some special events may require a small participation fee.					
+					</p>
+				</div>
+			</div>
+			<div class="FAQ" data-category="membership">
+				<div class="Question">
+					<span>Is there a dress code for club events?</span>
+					<span class="arrow-icon">▼</span>
+				</div>
+				<div class="Answer">
+					<p>
+					 Most events are casual, except some specific events neede to be in semi-formal. Specific dress codes are always noted in event descriptions.					
+					</p>
+				</div>
+			</div>
+
+			<div class="FAQ" data-category="events">
+				<div class="Question">
+					<span>What kind of events does the club organize?</span>
+					<span class="arrow-icon">▼</span>
+				</div>
+				<div class="Answer">
+					<p>
+					We host cultural nights, holiday celebrations, city tours, and professional networking events. Check our Events page for the current schedule. 			
+					</p>
+				</div>
+			</div>
+			<div class="FAQ" data-category="events">
+				<div class="Question">
+					<span>How can I stay updated about upcoming events?</span>
+					<span class="arrow-icon">▼</span>
+				</div>
+				<div class="Answer">
+					<p>
+					You can follow our club's social media pages and check your emails for announcements. 			
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	
+	<!-- Back To Top BUTTON -->
+<button id="backToTop" onclick="scrollToTop()">▲</button>
+
+	
+	<!-- Footer -->
+<!-- 引入 Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<footer>
+    <!-- Logo -->
+    <div>
+        <a href="MainPage.html"><img src="ISC LOGO.png" alt="ISC Logo" style="height: 180px;"></a>
+    </div>
+
+    <!-- Support -->
+    <div>
+        <h3>Support</h3>
+        <p><a href="INTRO.html#contact-us">Contact Us</a></p>
+        <p>Terms & Conditions</p>
+        <p>Privacy Policy</p>
+    </div>
+
+    <!-- Follow Us -->
+    <div>
+        <h3>Follow Us</h3>
+        <a href="https://www.instagram.com/apusrc/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+    	<a href="https://www.facebook.com/APUStudentARC" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+    </div>
+
+    <!-- Contact Details -->
+    <div>
+        <h3>Contact Details</h3>
+        <p>Phone no: +60125201314</p>
+        <p>Email: iscapu@gmail.com</p>
+    </div>
+</footer>
+
+<script>
+        // Toggle FAQ answers
+        document.querySelectorAll('.Question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+                
+                // Close other open items
+                document.querySelectorAll('.FAQ').forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+            });
+        });
+        
+        // Filter by category
+        document.querySelectorAll('.Btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active category button
+                document.querySelectorAll('.Btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const category = btn.dataset.category;
+                document.querySelectorAll('.FAQ').forEach(item => {
+                    if (category === 'all' || item.dataset.category === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

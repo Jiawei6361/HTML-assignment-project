@@ -1,0 +1,338 @@
+﻿.mySlides {display: none;}
+
+.slideshow-container img {
+    vertical-align: middle;
+    height: 460px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  width: 1215px;
+  position: relative;
+  top:10px;
+  margin: auto;
+  z-index: 500;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 20px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 2/3 3/3) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 18px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 10px;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: 0.4} 
+  to {opacity: 1}
+}
+
+
+
+/* Join Our Exciting Events */
+.event-intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 50px;
+    background: #f9f9f9;
+}
+
+.event-intro-text {
+    flex: 1;
+    max-width: 50%;
+    margin: 20px;
+  	padding: 10px;
+  	text-align: justify;
+}
+
+.event-intro-text h1 {
+    font-size: 2.5rem;
+    color: #6f5a54;
+}
+
+.event-intro-text p {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.event-intro-image {
+    flex: 1;
+    max-width: 50%;
+}
+
+.event-intro-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* 让小屏幕自动变成上下排列 */
+@media (max-width: 768px) {
+    .event-intro {
+        flex-direction: column;
+        text-align: center;
+    }
+    .event-text,
+    .event-image {
+        max-width: 100%;
+    }
+}
+
+
+
+
+/* Events Benefits - Image Gallery With Horizontal Scroll*/
+.gallery-container {
+    position: relative;
+}
+
+.gallery {
+    display: flex;
+    padding:20px;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; /* Force each image to fit in the center */
+    scrollbar-width: none;
+}
+
+.image-box {
+    position: relative;
+    min-width: 350px;
+    height: 250px;
+    overflow:hidden;
+    border: 3px solid;
+    border-image: linear-gradient(to bottom, #f3dad3, #d0b8b1, #af9891, #8e7872, #6f5a54) 1;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    transition: opacity 0.3s ease-in-out; /* Gradient effect */
+    opacity: 0;
+}
+
+.image-box:hover .overlay {
+    opacity: 1; /* Display text when mouse moves over image */
+}
+
+.scroll-btn {
+    position: absolute;
+    bottom: -40px;
+    background-color: WhiteSmoke;
+    color: #6f5a54;
+    border: 2px solid #6f5a54;
+    padding: 10px 15px;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background 0.3s ease;
+}
+
+.scroll-btn:hover {
+    background-color: #6f5a54;
+    color:WhiteSmoke;
+}
+
+.left {
+    left: 540px;
+}
+
+.right {
+    right: 530px;
+}
+
+
+
+
+
+/* Sub-events - MAIN 3 EVENTS*/
+.events-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.event-card {
+    width: 350px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.image-container {
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-container:hover img {
+    transform: scale(1.1);
+}
+
+.event-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.event-date, .event-time {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.event-title {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+.event-title:hover {
+    text-decoration: none;
+    color: #FF9966;
+}
+
+.event-desc {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.5;
+    margin: 20px;
+  	padding: 10px;
+  	text-align: justify;
+}
+
+
+
+/* Sub-events - OTHER EVENTS */
+.other-events-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.other-event-card {
+    display: flex;
+    width: 450px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.other-event-card:hover {
+    transform: translateY(-5px);
+}
+
+.other-image-container {
+    width: 150px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.other-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.other-event-info {
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.other-event-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.other-event-date {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.other-event-desc {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.4;
+    margin: 20px;
+  	padding: 10px;
+  	text-align: justify;
+}

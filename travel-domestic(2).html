@@ -1,0 +1,603 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel-Domestic</title>
+    <link href="MenuStyle.css" rel="stylesheet" type="text/css">
+    <script src="ButtonBackToTop.js" defer></script>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container-header {
+            position: relative;
+            margin-top:60px;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .header-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .header {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            z-index:-3;
+        }
+
+        .header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-caption {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 10;
+            width: 100%;
+        }
+
+        .header-caption h1 {
+            font-size: 140px;
+            margin-bottom: 5px;
+            font-weight:bold;
+            text-shadow:2px 2px 10px rgba(0,0,0,0.7);
+        }
+
+        .header-caption p {
+            font-size: 20px;
+            max-width: 1000px;
+            text-align: center;
+            text-shadow:1px 1px 5px rgba(0,0,0,0.7);
+            line-height: 1.5em;
+            margin: 0 auto;
+        }
+
+        /* 左右按钮样式 */
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            z-index: 100;
+            background: rgba(255,255,255,0.5);
+            color:white ;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 50px;
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+
+        .arrow:hover {
+            opacity: 1;
+        }
+
+        .l {
+            left: 20px;
+        }
+
+        .r {
+            right: 20px;
+        }
+
+        /* 小圆点导航 */
+        .dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            z-index:100;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            margin: 0 5px;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0.5;
+            transition: 0.3s;
+        }
+
+        .dot.active {
+            opacity: 1;
+            width: 15px;
+            height: 15px;
+        }        
+        .section-title{
+			text-align:center;
+			margin-bottom:50px;
+			font-size:20px;
+			color:black;
+			position:relative;
+			
+		}
+		
+
+        .introduction-section {
+        	justify-content:space-between;
+            display: flex;
+            padding: 50px;
+        }
+		.introduction-section img{
+		width:250px;
+		height:350px;
+		margin-left:80px;
+		}
+        .introduction-image{
+        	margin-top:20px;
+        	padding:10px;
+			flex:1;	
+			text-align:center;	
+		}
+        .introduction-text {
+            max-width: 50%;
+            text-align: justify;
+            margin-right:10%;
+            flex:1.5;
+        }
+
+        .introduction-text h2 {
+            font-size: 35px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .introduction-text p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        
+        .attraction-section{
+            padding:60px 5%;
+        }
+        .category{
+            display:flex;
+            justify-content:center;
+            margin-bottom:40px;
+            gap:20px;
+        }
+        .tab{
+            padding:12px 30px;
+            border-radius:30px;
+            background:#6f5a54;
+            color:white;
+            cursor:pointer;
+            font-weight:bold;
+            transition:all 0.3s;
+        }
+        .tab.active{
+            background:#bea6a0;
+            color:black;
+        }
+        .attraction-travel{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:30px;
+        }
+        .attraction{
+            background:white;
+            border-radius:8px;
+            overflow:hidden;
+            box-shadow:0 5px 15px rgba(0,0,0,0.1);
+            transition:transform 0.3s;
+            display:none;
+        }
+        
+               /* 只默认显示自然景观 */
+        .attraction.historical{
+            display:block;
+        }
+         .attraction:hover{
+            transform:translateY(-10px);
+         }
+         .attraction img{
+            width:100%;
+            height:200px;
+            object-fit: cover;
+        }
+        .attraction-info{
+            padding:20px;
+        }
+        .attraction-info h3{
+            margin-bottom:10px;
+            color:#333
+        }
+        .attraction-info p{
+            color:#666;
+            line-height:1.5;
+        }
+        .section-title{
+			z-index:-3;
+}
+    </style>
+</head>
+
+<body>
+<!-- Menu -->
+<div class="navbar">
+	<a href="MainPage.html" class="logo">
+        <img src="ISC LOGO.png" alt="ISC Logo">
+    </a>
+	<a href="MainPage.html">Main</a>
+	<a href="INTRO.html">About</a>
+	
+	<!-- 下拉menu的 -->
+	<div class="dropdown">
+        <a href="Events.html">Events</a>
+        <div class="dropdown-content">
+            <a href="EventsMT.html">Maldives Tour</a>
+            <a href="EventsCN.html">Cultural Night</a>
+            <a href="EventsCR.html">Colour Run</a>
+        </div>
+    </div>
+    
+	<a href="Community volunteer.html">Volunteering</a>
+	<a href="culture awareness.html">Cultural</a>
+	
+	<div class="dropdown">
+		<a href="Festival Celebration.html">Festival</a>
+		<div class="dropdown-content">
+			<a href="Malaysia.html">Domestic</a>
+			<a href="Foreign.html">Foreign</a>
+		</div>
+	</div>
+	
+	<div class="dropdown">
+		<a href="MainCuisine.html">Cuisine</a>
+		<div class="dropdown-content">
+			<a href="local food.html">Domestic</a>
+			<a href="in food.html">Foreign</a>
+		</div>
+	</div>
+	
+	<div class="dropdown">
+		<a href="Travel.html">Travel</a>
+		<div class="dropdown-content">
+			<a href="travel-domestic.html">Domestic</a>
+			<a href="travel-foreign.html">Foreign</a>
+		</div>
+	</div>
+	
+	<a href="FNQ.html">FAQ</a>
+	<a href="register.html" class="join-button">Join Us</a>
+
+</div>
+
+
+	<div class="container-header">
+	    <div class="header-container">
+	        <button class="arrow l" onclick="prev()">&#10094;</button>
+	
+	        <div class="header" style="display: block;">
+	            <img src="assignment/picture/photo_2025-03-28_00-01-50.jpg" alt="Malaysia 1">
+	            <div class="header-caption">
+	                <h1>Malaysia</h1>
+	                <p>A Nation Molded in Diversity, United in Spirit</p>
+	            </div>
+	        </div>
+	
+	        <div class="header">
+	            <img src="assignment/picture/0b04b900-city-54456-16881792363.jpg" alt="Malaysia 2">
+	            <div class="header-caption">
+	                <h1>Malaysia</h1>
+	                <p>A Nation Molded in Diversity, United in Spirit</p>
+	            </div>
+	        </div>
+	
+	        <div class="header">
+	            <img alt="Malaysia 3" src="assignment/picture/03e093ddba5632e17d99eb1bb143950d.jpg">
+	            <div class="header-caption">
+	                <h1>Malaysia</h1>
+	                <p>A Nation Molded in Diversity, United in Spirit</p>
+	            </div>
+	        </div>
+	
+	        <button class="arrow r" onclick="next()">&#10095;</button>
+	
+	        <!-- 小圆点 -->
+	        <div class="dots">
+	            <div class="dot active" onclick="goToSlide(0)"></div>
+	            <div class="dot" onclick="goToSlide(1)"></div>
+	            <div class="dot" onclick="goToSlide(2)"></div>
+	        </div>
+	    </div>
+	</div>	
+    <div class="introduction-section">
+        <div class="introduction-image">
+        	<img alt="intro" src="assignment/picture/photo_2025-03-30_17-37-51.jpg"></div>
+        <div class="introduction-text">
+            <h2>Malaysia</h2>
+            <p>
+            Malaysia is a country where diverse cultures blend harmoniously, uniting Malay, Chinese, 
+            Indian, and other ethnic traditions. It boasts a rich cultural heritage, from batik art 
+            and Silat martial arts to vibrant Chinese temple festivals. Renowned for its cuisine, 
+            iconic dishes like Nasi Lemak, Satay, and Teh Tarik reflect its multicultural roots. 
+            Festivals such as Hari Raya, Chinese New Year, and Deepavali highlight the nation's 
+            colorful traditions. Beyond its cultural richness, Malaysia is home to breathtaking 
+            landscapes, including Mount Kinabalu, the Langkawi Islands, and the rainforests of 
+            Borneo, offering a unique fusion of tradition and modernity.              
+            </p>
+        </div>
+    </div>     
+    <div class="attraction-section">
+    	<div class="section-title">
+    		<h1><b>TRAVEL ATTRACTION</b></h1>
+    	</div>
+        <div class="category">
+            <div class="tab active" onclick="filterAttractions('historical', event)">Historical Sites</div>
+            <div class="tab" onclick="filterAttractions('natural', event)">Natural Wonders</div>
+            <div class="tab" onclick="filterAttractions('cultural', event)">Cultural Experiences</div>
+        </div>
+        
+        <div class="attraction-travel">
+            <!-- 自然景观 -->
+            <div class="attraction historical">
+                
+                
+                <img alt="h2" src="assignment/picture/dcd1f97bb946a98b893b631f71cba962.jpg">
+                <div class="attraction-info">
+                    <h3>Stadthuys, Melaka</h3>
+                    <p>The best-preserved Dutch colonial architecture complex in Southeast Asia.</p>
+                </div>
+            </div>
+            <div class="attraction historical">
+               	<img alt="h3" src="assignment/picture/a4123ea7f7a743ad855de8ea05be3c59.jpg">
+                <div class="attraction-info">
+                    <h3>Merdeka Square, Kuala Lumpur</h3>
+                    <p>The historic site where Malaysia declared independence in 1957.</p>
+                </div>
+            </div>
+            <div class="attraction historical">
+                    
+                <img alt="h4" src="assignment/picture/43069710594_41fd7f9ebd_z.jpg">
+                <div class="attraction-info">
+                    <h3>Istana Lama Seri Menanti, Negeri Sembilan</h3>
+                    <p>The only all-wooden Minangkabau royal palace in Malaysia - built in 1905 without nails using 99 solid timber pillars</p>
+                </div>
+            </div>
+            <div class="attraction historical">
+                <img alt="h5" src="assignment/picture/intro/Malaysia-Penang-George-Town-Fort-Cornwallis-1440x1080.jpg">
+                <div class="attraction-info">
+                    <h3>Fort Cornwallis, Penang</h3>
+                    <p>The largest and best-preserved British fort in Malaysia.</p>
+                </div>
+            </div>
+            <div class="attraction historical">
+                <img alt="h6" src="assignment/picture/6-full.jpg">
+                <div class="attraction-info">
+                    <h3>Sarawak Cultural Village, Sarawak</h3>
+                    <p>Living museum showcasing the rich cultural heritage of Sarawak’s indigenous tribes.</p>
+                </div>
+            </div>
+            <div class="attraction historical">
+                
+                <img alt="h6" src="assignment/picture/photo_2025-03-27_23-59-11.jpg">
+                <div class="attraction-info">
+                    <h3>St. Paul’s Church, Melaka</h3>
+                    <p>The oldest European-built church ruins in Southeast Asia (1521)</p>
+                </div>
+            </div>
+            
+            <!-- 历史古迹 -->
+            <div class="attraction natural">
+            	
+                <img alt="1" src="assignment/picture/photo_2025-03-28_02-42-59.jpg">
+                <div class="attraction-info">
+                    <h3>Cameron Highlands,Pahang</h3>
+                    <p>Malaysia’s largest and most famous highland resort,  at an altitude of 1,200 to 2,000 meters above sea level.</p>
+                </div>
+            </div>
+            <div class="attraction natural">
+            	
+                <img alt="1" src="assignment/picture/03e093ddba5632e17d99eb1bb143950d.jpg">
+                <div class="attraction-info">
+                    <h3>Mount Kinabalu,Sabah</h3>
+                    <p>Highest peak in Malaysia and Borneo, standing at 4,095 meters (13,435 feet) above sea level.</p>
+                </div>
+            </div>
+            <div class="attraction natural">
+            	
+                <img alt="1" src="assignment/picture/photo_2025-03-28_02-39-10.jpg">
+                <div class="attraction-info">
+                    <h3>Redang Island,Terengganu</h3>
+                    <p>Known for its crystal-clear waters, white sandy beaches, and rich marine life, it is a popular destination for diving, snorkeling, and beach getaways.</p>
+                </div>
+            </div>
+            <div class="attraction natural">
+                 <img alt="1" src="assignment/picture/intro/taman-negara-pahang.jpg">                 
+                 <div class="attraction-info">
+                    <h3>Taman Negara,Pahang</h3>
+                    <p>130-million-year-old tropical rainforest, making it one of the world’s oldest rainforests.</p>
+                </div>
+            </div>
+            <div class="attraction natural">           
+                
+                
+                <img alt="1" src="assignment/picture/photo_2025-03-28_02-35-42.jpg">
+                <div class="attraction-info">
+                    <h3>Semporna, Sabah</h3>
+                    <p>Famous for its crystal-clear waters, rich marine biodiversity, and world-class diving spots.</p>
+                </div>
+            </div>
+            <div class="attraction natural">
+            	
+                <img alt="1" src="assignment/picture/Pinnacles_at_Mulu_2.jpg">
+                <div class="attraction-info">
+                    <h3>Gunung Mulu National Park,Sarawak</h3>
+                    <p> One of Southeast Asia’s most spectacular cave and karst landscapes and a UNESCO World Heritage Site.</p>
+                </div>
+            </div>
+            
+            <!-- 人文景观 -->
+            <div class="attraction cultural">
+                
+                
+                <img alt="c2" src="assignment/picture/photo_2025-03-27_23-58-52.jpg">
+                <div class="attraction-info">
+                    <h3>George Town Street Art,Penang</h3>
+                    <p>Well-preserved ancient city of ethnic minorities and a UNESCO World Cultural Heritage Site.</p>
+                </div>
+            </div>
+            <div class="attraction cultural">
+            	
+                <img alt="c3" src="assignment/picture/Jonker-Street-Night-Market-Welcome.jpg">
+                <div class="attraction-info">
+                    <h3>Jonker Street Night Market,Melaka</h3>
+                    <p>Masterpiece of Chinese private gardens and a UNESCO World Cultural Heritage Site.</p>
+                </div>
+            </div>
+            <div class="attraction cultural">
+                
+                <img alt="c4" src="assignment/picture/photo_2025-03-28_01-12-09.jpg">
+                <div class="attraction-info">
+                    <h3>Batu Caves,Selangor</h3>
+                    <p>One of the most important Hindu pilgrimage sites outside India and a famous limestone cave temple.</p>
+                </div>
+            </div>
+            <div class="attraction cultural">
+                <img alt="c5" src="assignment/picture/die-petronas-towers-sind.jpg">
+                <div class="attraction-info">
+                    <h3>Petronas Twin Towers,Kuala Lumpur</h3>
+                    <p>Tallest twin towers in the world and a symbol of Malaysia’s modernity and economic growth.</p>
+                </div>
+            </div>
+            <div class="attraction cultural">
+            	
+                <img alt="c1" src="assignment/picture/cc543a786380663b17e73a399ce3c0df.jpg">
+                <div class="attraction-info">
+                    <h3>Concubine Lane,Perak</h3>
+                    <p>Historic street famous for its heritage buildings, vibrant cafés, and street markets.</p>
+                </div>
+            </div>
+            <div class="attraction cultural">
+            	
+                <img alt="c6" src="assignment/picture/photo_2025-03-28_01-19-53.jpg">
+                <div class="attraction-info">
+                    <h3>Putra Mosque,Putrajaya</h3>
+                    <p>One of Malaysia’s most iconic mosques, known for its stunning pink-domed architecture and serene lakeside setting.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Back To Top BUTTON -->
+<button id="backToTop" onclick="scrollToTop()">▲</button>
+
+    
+	    <!-- Footer -->
+	<!-- 引入 Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<footer>
+	    <!-- Logo -->
+	    <div>
+	        <a href="MainPage.html"><img src="ISC LOGO.png" alt="ISC Logo" style="height: 180px;"></a>
+	    </div>
+	
+	    <!-- Support -->
+	    <div>
+	        <h3>Support</h3>
+	        <p><a href="INTRO.html#contact-us">Contact Us</a></p>
+	        <p>Terms & Conditions</p>
+	        <p>Privacy Policy</p>
+	    </div>
+	
+	    <!-- Follow Us -->
+	    <div>
+	        <h3>Follow Us</h3>
+	        <a href="https://www.instagram.com/apusrc/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+	    	<a href="https://www.facebook.com/APUStudentARC" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+	    </div>
+	
+	    <!-- Contact Details -->
+	    <div>
+	        <h3>Contact Details</h3>
+	        <p>Phone no: +60125201314</p>
+	        <p>Email: iscapu@gmail.com</p>
+	    </div>
+	</footer>
+
+    <script>
+        let slides = document.querySelectorAll('.header');
+	    let dots = document.querySelectorAll('.dot');
+	    let current = 0;
+	
+	    function hideSlides() {
+	        slides.forEach(slide => slide.style.display = 'none');
+	        dots.forEach(dot => dot.classList.remove('active'));
+	    }
+	
+	    function showSlide() {
+	        slides[current].style.display = 'block';
+	        dots[current].classList.add('active');
+	    }
+	
+	    function next() {
+	        hideSlides();
+	        current = (current + 1) % slides.length;
+	        showSlide();
+	    }
+	
+	    function prev() {
+	        hideSlides();
+	        current = (current - 1 + slides.length) % slides.length;
+	        showSlide();
+	    }
+	
+	    function goToSlide(index) {
+	        hideSlides();
+	        current = index;
+	        showSlide();
+	    }
+	
+	    // 景点分类切换功能
+	    function filterAttractions(category, event) {
+	        // 更新标签样式
+	        document.querySelectorAll('.tab').forEach(tab => {
+	            tab.classList.remove('active');
+	        });
+	        event.currentTarget.classList.add('active');
+	        
+	        // 隐藏所有景点
+	        document.querySelectorAll('.attraction').forEach(item => {
+	            item.style.display = 'none';
+	        });
+	        
+	        // 显示选中分类的景点
+	        document.querySelectorAll(`.attraction.${category}`).forEach(item => {
+	            item.style.display = 'block';
+	        });
+	    }
+	
+	    window.onload = function() {
+	        // 默认显示第一张幻灯片
+	        showSlide();
+	    };
+</script>
+</body>
+</html>

@@ -1,0 +1,463 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Intro</title>
+<link href="MenuStyle.css" rel="stylesheet" type="text/css">
+<script src="ButtonBackToTop.js" defer></script>
+<style>
+	
+	body{
+	font-family: Georgia, "Times New Roman", Times, serif;
+	background-color:whiteSmoke;
+	}
+	
+	html {
+  	scroll-behavior: smooth;
+	}
+	
+	/*Welcome message*/
+	.container-welcome{
+	display:flex;
+	justify-content:space between;
+	margin:5px 50px;
+	}
+	
+	.left{
+	flex:1;
+	padding:20px;
+	}
+	
+	h1 {
+    font-size: 3.5rem;
+    margin-top:30px;
+    margin-bottom:0;
+    
+	}
+	.right{
+	flex:1;
+	}
+	
+	.earth{
+			margin-left:20px;
+            width: 350px; 
+            position:relative;
+            height: 350px;
+            animation: rotateEarth 20s linear infinite; /*20 second rotate once*/
+            z-index:-1;
+        }
+
+     @keyframes rotateEarth {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+         }
+	.intro-join-button {
+		    display: inline-block;
+		    margin-top: 5px;
+		    padding: 12px 30px;
+		    background-color: #6f5a54; 
+		    color: white;
+		    text-decoration: none;
+		    border-radius: 20px;
+		    font-weight: bold;
+		    transition: background-color 0.3s;
+		}
+		
+	.intro-join-button:hover {
+		    background-color: #bea6a0; 
+		    color:black;
+		}
+    	
+    .main-content {
+    margin-top: 60px; /* 与导航栏高度匹配 */
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box; /* 防止padding影响总宽度 */
+}
+    /*About Us*/
+    .container-about{
+	display:flex;
+	justify-content:space-between;
+	}
+	
+	.about-img{
+	flex:1;
+	padding:20px;
+	text-align:center;
+	}
+	
+	.about-img img{
+	width:300px;
+	height:400px;
+	border-radius:50px;
+	margin-left:50px;
+	}
+	
+	.about{
+	flex:1.5;
+	padding:20px;
+	}
+	
+	.about h2{
+	font-size:2.5rem;
+	margin-bottom:20px;
+	}
+	
+	.about p{
+	font-size:1.1rem;
+	line-height:1.6;
+	margin-right:40px;
+	}
+	
+	/*Mission and Goals*/
+	.missiongoals{
+	margin:30px 0;
+	text-align:center;
+	}
+	.missiongoals h2{
+	font-size:2.5rem;
+	margin-bottom:-10px;
+	margin-top:70px;
+	}
+	.mission p{
+	text-align:center;
+	max-width:800px;
+	margin:20px auto;
+	}
+	.container-goals{
+	display:flex;
+	justify-content:center;
+	gap:40px;
+	margin-top:30px;
+	}
+	.goals{
+	width:280px;
+	padding:5px;
+	border:2px solid whitesmoke;
+	border-radius:15px;
+	transition:all 0.3 ease;
+	}
+	.goals:hover{
+	transform:scale(1.05);
+	box-shadow:0 5px 15px rgba(0,0,0,0.1);
+	border-color:#6f5a54;
+	
+	}
+	.goals img{
+	width:200px;
+	height:200px;
+	}
+	.goals h3{
+	font-size:1.3rem;
+	margin-bottom:10px;
+	}
+	.goals p{
+	font-size:1rem;
+	line-height:1.5;
+	}
+	/*Meet The Team*/
+	.team{
+	margin:30px 0;
+	text-align:center;
+	}
+
+	.team h2{
+	font-size:2.5rem;
+	margin-bottom:-10px;
+	margin-top:70px;
+	text-align:center;
+	}
+
+	.container-members{
+	display:flex;
+	justify-content:center;
+	gap:10px;
+	margin-top:30px;
+	}
+	.members{
+	width:180px;
+	padding:5px;
+	border:black;
+	text-align:center;
+	}
+	.members img{
+	width:170px;
+	height:200px;
+	object-fit:cover;
+	}
+	.members h3{
+	text-align:left;
+	font-size:1.5rem;
+	margin-top:10px;
+	margin-bottom:-10px;
+	}
+	.members p{
+	font-size:1rem;
+	line-height:1.5;
+	text-align:left;
+	}
+/*Contact Us*/
+	.container-contactus{
+	display:flex;
+	justify-content:space-between;
+	gap:20px;
+	max-width:1000px;
+	margin:0 200px;
+	margin-right:80px;
+	}
+	.contactus-info{
+	flex:1;
+	}
+	.contactus-info h2{
+	font-size:3em;
+	font-weight:bold;
+	}
+	.contactus-info p{
+	margin-top:-25px;
+	margin-bottom:30px;
+	}
+	.contactinfo{
+	display:flex;
+	align-items:center;
+	margin-bottom:10px;
+	gap:10px;
+	}
+	.contactinfo span{
+	font-weight:bold;
+}
+	.contactinfo img{
+	width:30px;
+	height:30px;
+	}
+	.contactus-img{
+	flex:1;
+}
+	.contactus-img img{
+	width:320px;
+	height:400px;
+	object-fit:cover;
+	border-radius:55px;
+	}
+	</style>
+</head>
+
+<body>
+	<!-- Menu -->
+	<div class="navbar">
+		<a href="MainPage.html" class="logo">
+	        <img src="ISC LOGO.png" alt="Logo">
+	    </a>
+		<a href="MainPage.html">Main</a>
+		<a href="INTRO.html">About</a>
+		
+		<!-- 下拉menu的 -->
+		<div class="dropdown">
+	        <a href="Events.html">Events</a>
+	        <div class="dropdown-content">
+	            <a href="EventsMT.html">Maldives Tour</a>
+	            <a href="EventsCN.html">Cultural Night</a>
+	            <a href="EventsCR.html">Colour Run</a>
+	        </div>
+	    </div>
+	    
+		<a href="Community volunteer.html">Volunteering</a>
+		<a href="culture awareness.html">Cultural</a>
+		
+		<div class="dropdown">
+			<a href="Festival Celebration.html">Festival</a>
+			<div class="dropdown-content">
+				<a href="Malaysia.html">Domestic</a>
+				<a href="Foreign.html">Foreign</a>
+			</div>
+		</div>
+		
+		<div class="dropdown">
+			<a href="MainCuisine.html">Cuisine</a>
+			<div class="dropdown-content">
+				<a href="local food.html">Domestic</a>
+				<a href="in food.html">Foreign</a>
+			</div>
+		</div>
+		
+		<div class="dropdown">
+			<a href="Travel.html">Travel</a>
+			<div class="dropdown-content">
+				<a href="travel-domestic.html">Domestic</a>
+				<a href="travel-foreign.html">Foreign</a>
+			</div>
+		</div>
+		
+		<a href="FNQ.html">FAQ</a>
+		<a href="register.html" class="join-button">Join Us</a>
+	
+	</div>
+	
+	<div class="main-content">
+		<div class="container-welcome">
+			<div class="welcome-message">
+				<h1>Welcome to the </br>International Student Club!</h1>
+				<p>Whether you are here to study, explore, or connect with others,</br> 
+				ISC is here to make your journey smoother and more enjoyable.</p>
+				<a href="register.html" class="intro-join-button">Join Now</a>                                  
+			</div>
+			<div class="welcome-img">
+				<img alt="earth" src="assignment/picture/photo_2025-03-28_14-49-00-removebg-preview.png" class="earth">
+			</div>
+		</div>
+		
+		<div class="container-about">
+			<div class="about-img">
+				<img alt="about" src="assignment/picture/intro/photo_2025-03-28_17-07-46.jpg"></div>
+			<div class="about">
+				<h2>About Us</h2>
+				<p>
+				The <b>International Student Club</b> was founded to help international students 
+				adapt to a new academic and social environment. We understand the challenges 
+				of studying abroad—homesickness, cultural differences, and academic adjustments. 
+				That’s why ISC serves as a bridge, connecting students with the resources, 
+				support, and friendships they need to thrive.
+				</p>
+				<p>
+				Our club <b>promotes cultural exchange, personal growth, and a sense of belonging.</b> 
+				Through our various initiatives, we strive to create a space where everyone feels valued and included.
+				</p>
+			</div>
+		</div>
+		<div class="missiongoals">
+			<h2>Mission & Goals</h2>
+			<div class="mission">
+			<p>
+			<b>Our mission</b> is to empower international students by providing them with a supportive network, 
+			cultural learning opportunities, and resources to help them succeed academically and socially. 
+			We aim to create a home away from home for all students.
+			</p>
+			</div>
+			<div class="container-goals">
+				<div class="goals">
+					<img alt="goal" src="assignment/picture/intro/around-the-world-creative-icon-design-free-vector-removebg-preview.png">
+					<h3>Foster Cultural Exchange</h3>
+					<p>Encourage students to share and celebrate their cultures with others.</p>
+				</div>
+				<div class="goals">
+					<img alt="goal" src="assignment/picture/intro/images-removebg-preview.png">
+					<h3>Support Student Well-being</h3>
+					<p>Offer guidance and assistance to help students adjust to life in a new country.</p>
+				</div>
+				<div class="goals">
+					<img alt="goals" src="assignment/picture/intro/istockphoto-1226866840-612x612-removebg-preview.png">
+					<h3>Build a Strong Community</h3>
+					<p>Create opportunities for networking and friendship among students from different backgrounds.</p>
+				</div>
+			</div>
+		</div>
+		<div class="team">
+			<h2>Meet The Team</h2>
+			<p>Our club is run by a passionate and dedicated team of students 
+			</br>who are committed to making your international experience unforgettable!</p>
+			<div class="container-members">
+				<div class="members">
+					
+					<img alt="1" src="assignment/picture/WhatsApp%20Image%202025-04-11%20at%2010.37.58%20PM.jpeg">
+					<div class="member-info">
+					<h3>Soo Jing Yuan</h3>
+					<p>President</p>
+					</div>
+				</div>
+				<div class="members">
+					<img alt="1" src="assignment/picture/WhatsApp%20Image%202025-04-12%20at%206.58.06%20PM.jpeg">
+					<div class="member-info">
+					<h3>Kalista Melva</h3>
+					<p>Vice President</p>
+					</div>
+				</div>
+				<div class="members">
+					<img alt="1" src="assignment/picture/WhatsApp%20Image%202025-04-12%20at%206.49.55%20PM.jpeg">
+					<div class="member-info">
+					<h3>Oh Jia Wei</h3>
+					<p>Secretary</p>
+					</div>
+				</div>
+				<div class="members">
+					<img alt="1" src="assignment/picture/WhatsApp%20Image%202025-04-11%20at%202.37.05%20PM.jpeg">
+					<div class="member-info">
+					<h3>Lee De Tai</h3>
+					<p>Treasurer</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<a name="contact-us"></a><br><br><br>
+		<div class="container-contactus">
+		
+			<div class="contactus-info">
+				<h2>Contact Us</h2>
+				<p>We’d love to hear from you! Whether you have a 
+				question, suggestion, or just want to connect — 
+				feel free to reach out.</p>
+				
+				<div class="contactinfo">
+					<img alt="phone" src="assignment/picture/phone-call.png">
+					<span>+60125201314</span>
+				</div>
+				<div class="contactinfo">
+					<img alt="mail" src="assignment/picture/mail.png">
+					<span>iscapu@gmail.com</span>
+				</div>
+				<div class="contactinfo">
+					<img alt="location" src="assignment/picture/location.png">
+					<span>Block E, Level 7 E7-03 (Office Hour:9:00a.m-4:30p.m.)</span>
+				</div>
+			</div>
+			<div class="contactus-img">
+				<img alt="1" src="assignment/picture/photo_2025-04-12_20-03-16.jpg">
+			</div>
+		</div>
+
+	</div>
+	
+	
+	<!-- Back To Top BUTTON -->
+	<button id="backToTop" onclick="scrollToTop()">▲</button>
+
+	
+		<!-- Footer -->
+	<!-- 引入 Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<footer>
+	    <!-- Logo -->
+	    <div>
+	        <a href="MainPage.html"><img src="ISC LOGO.png" alt="ISC Logo" style="height: 180px;"></a>
+	    </div>
+	
+	    <!-- Support -->
+	    <div>
+	        <h3>Support</h3>
+	        <p><a href="INTRO.html#contact-us">Contact Us</a></p>
+	        <p>Terms & Conditions</p>
+	        <p>Privacy Policy</p>
+	    </div>
+	
+	    <!-- Follow Us -->
+	    <div>
+	        <h3>Follow Us</h3>
+	        <a href="https://www.instagram.com/apusrc/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+	    	<a href="https://www.facebook.com/APUStudentARC" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+	    </div>
+	
+	    <!-- Contact Details -->
+	    <div>
+	        <h3>Contact Details</h3>
+	        <p>Phone no: +60125201314</p>
+	        <p>Email: iscapu@gmail.com</p>
+	    </div>
+	</footer>
+
+</body>
+
+</html>
