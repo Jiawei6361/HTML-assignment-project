@@ -27,4 +27,4 @@ It also includes a photo gallery and spaces for future content such as certifica
 ## How to Use
 1. Clone the repository:
 ```bash
-git clone <your-repo-url>
+git clone <[your-repo-url](https://github.com/Jiawei6361/HTML-assignment-project)>
